@@ -1,0 +1,18 @@
+name: Add Labels
+
+on:
+ issues:
+    types: [closed]
+
+jobs:
+  add_labels:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions-ecosystem/action-add-labels@v1
+        if: ${{ startsWith(github.event.comment.body, 'by 生信技能树') }}
+        with:
+          labels: |
+            fetched
+            生信技能树
+            测试

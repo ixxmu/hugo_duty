@@ -1,0 +1,33 @@
+name: "Convert issues to markdowns"
+on:
+  issues:
+   types: [closed,labeled, unlabeled ]
+    
+jobs:
+  convert_issues_to_markdown_job:
+    runs-on: ubuntu-latest
+    name: Convert issues to markdowns.
+    steps:
+      - name: checkout
+        uses: actions/checkout@v1
+      - name: Fetch issues and generate markdowns
+        uses: skyfe79/hugo-with-github-issues@v1.7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          repo: 'mp_duty'
+          owner: 'ixxmu'
+          # skip-author: 'utterances-bot'
+          # skip-author: 'xx-bot'
+          use-issue-seperator: 'true'
+          output: 'content/posts'
+      - name: Commit files
+        run: |
+          git config --local user.email "jjliulangjj@gmail.com"
+          git config --local user.name "ixxmu"
+          git add .
+          git commit -m "Add Posts"
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ github.ref }}
