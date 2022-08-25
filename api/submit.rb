@@ -1,7 +1,7 @@
 require 'octokit'
 
 TOKEN = ENV['TOKEN']
-REPO = ENV['REPO'] || 'ixxmu/hugo_duty'
+REPO = ENV['REPO'] || 'duty-machine/archives'
 
 Handler = Proc.new do |req, res|
   url = req.query['url']
