@@ -1,6 +1,8 @@
 name: generate ai wiki
 on:
-  issue_comment:
+ issues:
+    types: [closed]
+ issue_comment:
     types: [edited,opened,closed]
 jobs:
   run:
