@@ -16,7 +16,7 @@ jobs:
           issue-number: ${{ github.event.issue.number }}
           # issue-number: 1
           # comment-author: "github-actions[bot]"
-          comment-author: "ixxmu"
+          # comment-author: "ixxmu"
           # body-includes: This is a QR code for access to the preview app.
           
       - name: Print Comment ID & Author
