@@ -1,7 +1,7 @@
 name: generate a Markdown file
 on:
   issues:
-    types: [closed]
+    types: [closed,labeled, unlabeled]
   issue_comment:
     types: [created,edited]
 jobs:
