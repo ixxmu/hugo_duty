@@ -23,6 +23,8 @@ jobs:
         run: |
           echo ${{ steps.bot.outputs.comment-id }}
           echo ${{ steps.bot.outputs.comment-author }}
+          x=${{ toJson(github.event.pull_request.labels.*.name) }}
+          echo $x
 
       - uses: ixxmu/turn-issues-to-posts-action@master
         with:
