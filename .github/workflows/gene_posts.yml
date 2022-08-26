@@ -34,7 +34,6 @@ jobs:
           label_name: ${{ toJson(github.event.issue.labels.*.name) }}
           title: ${{ github.event.issue.title }}
           body: ${{ steps.bot.outputs.comment-body }}
-          categories: "Duty"
           number: ${{ github.event.issue.number }}
           comment: ${{ github.event.issue.body  }}
           actor: ${{ github.actor }}
