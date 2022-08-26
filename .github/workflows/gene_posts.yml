@@ -1,4 +1,4 @@
-name: generate ai wiki
+name: generate a Markdown file
 on:
  issues:
     types: [closed]
