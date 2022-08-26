@@ -19,7 +19,11 @@ jobs:
           comment-author: "ixxmu"
           # body-includes: This is a QR code for access to the preview app.
           
-          
+      - name: Print Comment ID & Author
+        run: |
+          echo ${{ steps.bot.outputs.comment-id }}
+          echo ${{ steps.bot.outputs.comment-author }}
+
       - uses: ixxmu/turn-issues-to-posts-action@master
         with:
           branch: "master" # default to main
@@ -33,9 +37,3 @@ jobs:
           number: ${{ github.event.issue.number }}
           comment: ${{ github.event.issue.body  }}
           actor: ${{ github.actor }}
-          
-      - name: Print Comment ID & Author
-        run: |
-          echo ${{ steps.bot.outputs.comment-id }}
-          echo ${{ steps.bot.outputs.comment-author }}
-          echo ${{github.event.label}}
