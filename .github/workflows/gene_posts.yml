@@ -1,7 +1,7 @@
 name: generate a Markdown file
 on:
   issues:
-    types: [closed,labeled, unlabeled]
+    types: [closed]
 jobs:
   run:
     runs-on: ubuntu-latest
