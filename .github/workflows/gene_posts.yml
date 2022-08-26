@@ -10,8 +10,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Find Comment
-        uses: peter-evans/find-comment@v1
-        id: fc
+        uses: uses: peter-evans/find-comment@v2.0.0
+        id: bot
         with:
           issue-number: ${{ github.event.issue.number }}
           # issue-number: 1
