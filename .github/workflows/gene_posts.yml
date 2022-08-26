@@ -23,8 +23,6 @@ jobs:
         run: |
           echo ${{ steps.bot.outputs.comment-id }}
           echo ${{ steps.bot.outputs.comment-author }}
-          x=${{ toJson(github.event.pull_request.labels.*.name) }}
-          echo $x
 
       - uses: ixxmu/turn-issues-to-posts-action@master
         with:
@@ -33,7 +31,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           created_at: ${{ github.event.issue.created_at }}
           updated_at: ${{ github.event.issue.updated_at }}
-          label_name: ${{github.event.labels.name}}
+          label_name: ${{toJson(github.event.issue.labels.*.name)}}
           title: ${{ github.event.issue.title }}
           body: ${{ steps.bot.outputs.comment-body }}
           number: ${{ github.event.issue.number }}
