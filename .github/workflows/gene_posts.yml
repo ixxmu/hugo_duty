@@ -1,6 +1,6 @@
 name: generate a Markdown file
 on:
-  pull_request:
+  issues:
     types: [closed]
   issue_comment:
     types: [created,edited]
