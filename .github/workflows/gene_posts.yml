@@ -2,8 +2,6 @@ name: generate a Markdown file
 on:
   issues:
     types: [closed,labeled, unlabeled]
-  issue_comment:
-    types: [created,edited]
 jobs:
   run:
     runs-on: ubuntu-latest
