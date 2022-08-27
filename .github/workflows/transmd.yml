@@ -5,6 +5,7 @@ on:
       - master
     paths:
       - '**.md'
+      - 'posts/**'
 jobs:
   copy-file:
     runs-on: ubuntu-latest
