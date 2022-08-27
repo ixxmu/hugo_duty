@@ -17,7 +17,7 @@ jobs:
       env:
         API_TOKEN_GITHUB: ${{ secrets.PUSH_MD }}
       with:
-        source_file: 'docs/**'
+        source_file: 'docs/*'
         destination_repo: 'ixxmu/ixxmu.github.io.source'
         destination_branch: 'main'
         destination_folder: 'content/post'
