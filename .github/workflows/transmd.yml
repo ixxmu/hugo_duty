@@ -1,11 +1,9 @@
 name: push md files to source branch
 on:
-  push:
-    branches:
-      - master
-    paths:
-      - '**.md'
-      - 'posts/**'
+  workflow_run:
+    workflows: ["generate a Markdown file"]
+    types:
+      - completed
 jobs:
   copy-file:
     runs-on: ubuntu-latest
