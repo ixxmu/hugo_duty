@@ -15,12 +15,12 @@ jobs:
     - name: Pushes test file
       uses: dmnemec/copy_file_to_another_repo_action@1.1.1
       env:
-        API_TOKEN_GITHUB: ${{ secrets.GITHUB_TOKEN }}
+        API_TOKEN_GITHUB: ${{ secrets.HUGO_DURY_TOKEN }}
       with:
         source_file: 'docs/**'
         destination_repo: 'ixxmu/ixxmu.github.io.source'
         destination_branch: 'main'
         destination_folder: 'content/post'
-        user_email: 'github-actions[bot]@users.noreply.github.com'
-        user_name: 'github-actions[bot]'
+        user_email: 'jjliulangjj@gmail.com'
+        user_name: 'ixxmu'
         commit_message: 'A custom message for the commit'
