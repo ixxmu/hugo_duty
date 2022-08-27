@@ -24,6 +24,7 @@ jobs:
           echo ${{ steps.bot.outputs.comment-author }}
 
       - uses: ixxmu/turn-issues-to-posts-action@master
+        id: mdbot
         with:
           branch: "master" # default to main
           dir: "posts" # default to _posts
@@ -36,3 +37,10 @@ jobs:
           number: ${{ github.event.issue.number }}
           comment: ${{ github.event.issue.body  }}
           actor: ${{ github.actor }}
+          
+      - name: Print MD ID Author
+        run: |
+          echo ${{ steps.mdbot.outputs.comment-id }}
+          echo ${{ steps.mdbot.outputs.comment-author }}
+          echo ${{ inputs.dir }}
+          echo ${POST_TITLE}".md
