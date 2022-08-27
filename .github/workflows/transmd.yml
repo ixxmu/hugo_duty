@@ -13,7 +13,7 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Pushes test file
-      uses: dmnemec/copy_file_to_another_repo_action@1.1.1
+      uses: dmnemec/copy_file_to_another_repo_action@main
       env:
         API_TOKEN_GITHUB: ${{ secrets.HUGO_DURY_TOKEN }}
       with:
