@@ -37,9 +37,3 @@ jobs:
           number: ${{ github.event.issue.number }}
           comment: ${{ github.event.issue.body  }}
           actor: ${{ github.actor }}
-          
-      - name: Print MD ID Author
-        run: |
-          cd posts
-          ls
-          echo ${{ github.event.issue.title }}.md
