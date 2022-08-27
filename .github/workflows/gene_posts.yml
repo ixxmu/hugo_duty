@@ -40,7 +40,6 @@ jobs:
           
       - name: Print MD ID Author
         run: |
-          echo ${{ steps.bot.outputs.comment-id }}
-          echo ${{ steps.bot.outputs.comment-author }}
-          echo ${{ steps.mdbot.outputs.md_title }}
-          echo ${steps.mdbot.outputs.POST_TITLE}.md
+          cd posts
+          ls
+          echo ${{ github.event.issue.title }}.md
