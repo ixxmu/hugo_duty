@@ -40,7 +40,7 @@ jobs:
           
       - name: Print MD ID Author
         run: |
-          echo ${{ steps.mdbot.outputs.comment-id }}
-          echo ${{ steps.mdbot.outputs.comment-author }}
-          echo ${{ inputs.dir }}
-          echo ${POST_TITLE}".md
+          echo ${{ steps.bot.outputs.comment-id }}
+          echo ${{ steps.bot.outputs.comment-author }}
+          echo ${{ steps.mdbot.outputs.inputs.dir }}
+          echo ${steps.mdbot.outputs.POST_TITLE}.md
