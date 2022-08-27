@@ -15,7 +15,7 @@ jobs:
     - name: Pushes test file
       uses: dmnemec/copy_file_to_another_repo_action@main
       env:
-        API_TOKEN_GITHUB: ${{ secrets.HUGO_DURY_TOKEN }}
+        API_TOKEN_GITHUB: ${{ secrets.PUSH_MD }}
       with:
         source_file: 'docs/**'
         destination_repo: 'ixxmu/ixxmu.github.io.source'
