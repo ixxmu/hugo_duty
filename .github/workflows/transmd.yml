@@ -19,8 +19,8 @@ jobs:
       with:
         source_file: 'docs'
         destination_repo: 'ixxmu/ixxmu.github.io.source'
-        destination_branch: 'main'
-        destination_folder: 'content/post'
+        destination_branch: 'duty_others'
+        destination_folder: 'content/posts'
         user_email: 'jjliulangjj@gmail.com'
         user_name: 'ixxmu'
         commit_message: 'A custom message for the commit'
