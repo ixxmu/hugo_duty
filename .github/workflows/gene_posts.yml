@@ -28,13 +28,13 @@ jobs:
         with:
           branch: "master" # default to main
           dir: "posts" # default to _posts
+          categories: "Duty2"
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           created_at: ${{ github.event.issue.created_at }}
           updated_at: ${{ github.event.issue.updated_at }}
           label_name: ${{ toJson(github.event.issue.labels.*.name) }}
           title: ${{ github.event.issue.title }}
           body: ${{ steps.bot.outputs.comment-body }}
-          categories: "Duty2"
           number: ${{ github.event.issue.number }}
           comment: ${{ github.event.issue.body  }}
           actor: ${{ github.actor }}
