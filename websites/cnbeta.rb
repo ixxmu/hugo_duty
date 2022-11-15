@@ -1,7 +1,7 @@
 register_website(
   name: 'default',
   test: -> (uri) {
-    uri.hostname == 'm.cnbeta.com'
+    uri.hostname == 'm.cnbeta.com.tw'
   },
   request: -> (uri) {
     headers = {
