@@ -1,6 +1,6 @@
 ---
 title: "睿医学术专用版ChatGPT Academic使用教程"
-date: 2023-12-22T07:05:43Z
+date: 2023-12-22T07:10:03Z
 draft: ["false"]
 tags: [
   "fetched",
