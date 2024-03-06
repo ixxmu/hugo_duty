@@ -4,6 +4,6 @@
 > https://github.com/duty-machine/duty-machine
 
 ### 在线观看
-> https://github.com/duty-machine/duty-machine
+> https://duty-blog.pages.dev
 
 
