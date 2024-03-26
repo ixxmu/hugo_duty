@@ -27,7 +27,7 @@ jobs:
     - name: Pushes test file to bk
       uses: dmnemec/copy_file_to_another_repo_action@main
       env:
-        API_TOKEN_GITHUB: ${{ secrets.PUSH_MD }}
+        API_TOKEN_GITHUB: ${{ secrets.DUTY_BK_TOKEN }}
       with:
         source_file: 'posts'
         destination_repo: 'ixxmu/duty_bk'
