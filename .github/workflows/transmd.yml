@@ -36,10 +36,9 @@ jobs:
         user_email: 'jjliulangjj@gmail.com'
         user_name: 'ixxmu'
         commit_message: 'A custom message for the commit'
+
+    - name: Wait for file pushing
+      run: sleep 10 & pwd
         
     - name: Delete Source Files
-      uses: actions/github-script@v5
-      with:
-        script: |
-          const io = require('@actions/io');
-          await io.rmRF('posts');
+      run: sudo rm -rf posts
