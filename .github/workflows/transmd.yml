@@ -23,6 +23,19 @@ jobs:
         user_email: 'jjliulangjj@gmail.com'
         user_name: 'ixxmu'
         commit_message: 'A custom message for the commit'
+        
+    - name: Pushes test file to bk
+      uses: dmnemec/copy_file_to_another_repo_action@main
+      env:
+        API_TOKEN_GITHUB: ${{ secrets.PUSH_MD }}
+      with:
+        source_file: 'posts'
+        destination_repo: 'ixxmu/duty_bk'
+        destination_branch: 'main'
+        destination_folder: 'hugo_duty/'
+        user_email: 'jjliulangjj@gmail.com'
+        user_name: 'ixxmu'
+        commit_message: 'A custom message for the commit' 
     - name: Delete Source Files
       run: |
         rm -rf posts # 将'posts'替换为你需要删除的具体文件或文件夹路径
