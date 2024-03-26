@@ -38,6 +38,8 @@ jobs:
         commit_message: 'A custom message for the commit'
         
     - name: Delete Source Files
-      uses: JesseTG/rm@v1.0.3
+      uses: actions/github-script@v5
       with:
-        path: /posts/*
+        script: |
+          const io = require('@actions/io');
+          await io.rmRF('posts');
