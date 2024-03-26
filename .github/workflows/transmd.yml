@@ -39,5 +39,5 @@ jobs:
         
     - name: Delete Source Files
       run: |
-        rm -rf posts # 将'posts'替换为你需要删除的具体文件或文件夹路径
+        rm -rf ./posts/* # 将'posts'替换为你需要删除的具体文件或文件夹路径
       shell: bash
