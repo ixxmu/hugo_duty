@@ -42,4 +42,4 @@ jobs:
         
     - name: Delete Source Files
       run: |
-        sudo rm -rf $(pwd)/posts
+        sudo rm -rf posts
