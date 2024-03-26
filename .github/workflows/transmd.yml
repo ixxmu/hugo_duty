@@ -41,4 +41,6 @@ jobs:
       run: sleep 10 & pwd
         
     - name: Delete Source Files
-      run: rm -rf $(pwd)/posts
+      working-directory: /posts
+      run: |
+        sudo rm -rf *
