@@ -33,7 +33,7 @@ jobs:
         destination_repo: 'ixxmu/duty_bk'
         destination_branch: 'main'
         destination_folder: 'hugo_duty/'
-        user_email: 'jjliulangjj@gmail.com'
+        user_email: ${{ secrets.MY_EMAIL }}
         user_name: 'ixxmu'
         commit_message: 'A custom message for the commit'
 
@@ -55,7 +55,7 @@ jobs:
       
     - name: Commit and Push Deletion
       run: |
-        git config --global user.email "jjliulangjj@gmail.com"
+        git config --global user.email ${{ secrets.MY_EMAIL }}
         git config --global user.name "ixxmu"
         git rm -rf posts
         git commit -m "Delete source posts folder"
