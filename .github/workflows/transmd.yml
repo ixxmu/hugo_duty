@@ -40,6 +40,13 @@ jobs:
     - name: Wait for file pushing
       run: sleep 10 & pwd
         
-    - name: Delete Source Files
+    - name: Remove File
+      uses: JesseTG/rm@v1.0.2
+      with:
+        path: posts/*
+      
+    - name: Commit and push changes
       run: |
-        sudo rm -rf posts
+          git add .
+          git commit -m "Delete the new one"
+          git push
