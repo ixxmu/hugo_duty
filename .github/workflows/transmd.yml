@@ -20,7 +20,7 @@ jobs:
         destination_repo: 'ixxmu/ixxmu.github.io.source'
         destination_branch: 'duty_others'
         destination_folder: 'content/'
-        user_email: 'jjliulangjj@gmail.com'
+        user_email: ${{ secrets.MY_EMAIL }}
         user_name: 'ixxmu'
         commit_message: 'A custom message for the commit'
         
