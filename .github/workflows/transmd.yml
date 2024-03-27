@@ -11,6 +11,15 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v4.1.1
 
+    - name: Fetch commit message
+      run: |
+        COMMIT_SHA="${{ github.event.workflow_run.head_commit.id }}"
+        COMMIT_MSG=$(gh api repos/${{ github.repository }}/commits/$COMMIT_SHA -q .commit.message)
+        echo "Commit message: $COMMIT_MSG"
+        echo "COMMIT_MSG<<EOF" >> $GITHUB_ENV
+        echo "$COMMIT_MSG" >> $GITHUB_ENV
+        echo "EOF"
+
     - name: Pushes test file
       uses: dmnemec/copy_file_to_another_repo_action@main
       env:
