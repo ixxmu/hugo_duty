@@ -39,9 +39,17 @@ jobs:
 
     - name: Wait for file pushing
       run: sleep 10 & pwd
-        
-    - name: Remove File
-      uses: JesseTG/rm@v1.0.2
-      with:
-        path: ./posts/*
+
+    - name: Delete Source Files
+      run: |
+        rm -rf posts # 删除源文件夹
+      
+    - name: Delete Source Files
+      run: |
+        echo "Deleting posts directory..."
+        ls -alh # 打印当前目录结构以供检查
+        rm -rf posts # 删除posts文件夹
+        echo "After deletion:"
+        ls -alh # 再次打印当前目录结构确认删除
+      shell: bash
       
