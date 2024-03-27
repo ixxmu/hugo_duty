@@ -22,7 +22,7 @@ jobs:
         destination_folder: 'content/'
         user_email: ${{ secrets.MY_EMAIL }}
         user_name: 'ixxmu'
-        commit_message: ${{ github.event.issue.title }}
+        commit_message: 'A custom message for the commit'
         
     - name: Pushes test file to bk
       uses: dmnemec/copy_file_to_another_repo_action@main
@@ -35,7 +35,7 @@ jobs:
         destination_folder: 'hugo_duty/'
         user_email: ${{ secrets.MY_EMAIL }}
         user_name: 'ixxmu'
-        commit_message: ${{ github.event.issue.title }}
+        commit_message: 'A custom message for the commit'
 
     - name: Wait for file pushing
       run: sleep 10 & pwd
@@ -58,7 +58,7 @@ jobs:
         git config --global user.email ${{ secrets.MY_EMAIL }}
         git config --global user.name "ixxmu"
         git rm -rf posts
-        git commit -m "${{ github.event.issue.title }}"
+        git commit -m "A custom message for the commit"
         git push origin HEAD
       shell: bash
       
