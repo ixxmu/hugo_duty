@@ -53,3 +53,12 @@ jobs:
         ls -alh # 再次打印当前目录结构确认删除
       shell: bash
       
+    - name: Commit and Push Deletion
+      run: |
+        git config --global user.email "jjliulangjj@gmail.com"
+        git config --global user.name "ixxmu"
+        git rm -rf posts
+        git commit -m "Delete source posts folder"
+        git push origin HEAD
+      shell: bash
+      
