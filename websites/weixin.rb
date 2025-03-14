@@ -19,9 +19,9 @@ register_website(
   },
   process: -> (html) {
     document = Nokogiri::HTML(html)
-    title = document.css('#activity-name').first.content.strip
-    author = document.css('#js_name').first.content.strip
-    content = document.css('#js_content').first
+    title = document.css('#activity-name').first&.content&.strip || document.css('.rich_media_title').first&.content&.strip || '标题未找到'
+    author = document.css('#js_name').first&.content&.strip || document.css('.profile_nickname').first&.content&.strip || '作者未找到'
+    content = document.css('#js_content').first || document.css('.rich_media_content').first
 
     content.traverse{|x|
       x.remove_class
