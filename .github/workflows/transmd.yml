@@ -26,7 +26,7 @@ jobs:
           echo "The commit message was: $COMMIT_MSG"
 
     - name: Pushes test file
-      uses: dmnemec/copy_file_to_another_repo_action@main
+      uses: ixxmu/copy_file_to_another_repo_action@main
       env:
         API_TOKEN_GITHUB: ${{ secrets.PUSH_MD }}
       with:
